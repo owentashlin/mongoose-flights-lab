@@ -1,10 +1,16 @@
 //controllers/flights.js
-let Flight = require('../models/flight')
+
+const Flight = require('../models/flight')
 
 function newFlight(req, res) {
-    res.render('/new')
+    res.render('flights/new')
+}
+
+function allFlights(req, res) {
+    res.render('flights/all')
 }
 
 module.exports = {
-    new: newFlight
+    new: newFlight,
+    all: allFlights
 }
