@@ -1,9 +1,9 @@
 let express = require('express');
 let router = express.Router();
 
+const flightsCtrl = require('../controllers/flights')
+
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/new', flightsCtrl.new)
 
 module.exports = router;
