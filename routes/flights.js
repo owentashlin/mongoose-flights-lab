@@ -6,6 +6,7 @@ let router = express.Router();
 const flightsCtrl = require('../controllers/flights')
 
 /* GET home page. */
+router.get('/index', flightsCtrl.index)
 router.get('/new', flightsCtrl.new)
 router.get('/all', flightsCtrl.all)
 

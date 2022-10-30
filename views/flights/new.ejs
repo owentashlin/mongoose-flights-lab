@@ -8,7 +8,29 @@
     <title>New Flight</title>
 </head>
 <body>
+    <div id="navbar">
+        <img src="../images/plane.png">
+        <a href="/flights/index">Home</a>
+        <a href="/flights/all">All Flights</a><br>
+      </div>
     <h2>Enter a New Flight</h2>
-</form>
+    <form action="/flights" method="POST">
+        <label>Airline:
+          <input type="text" name="airline">
+        </label><br>
+        <label>Airport:
+          <input type="text" name="airport">
+        </label><br>
+        <label>Flight Number:
+          <input type="text" name="flightNo">
+        </label><br>
+        <label>Departure Date:
+          <input type="date" name="depDate">
+          <br>
+        <input type="submit" value="Add Flight">
+      </form>  
+<div id="mongoose"> 
+    <img src="../images/mongoose.png">
+    </div>
 </body>
 </html>
