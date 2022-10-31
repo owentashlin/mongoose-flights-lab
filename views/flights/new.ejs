@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>New Flight</title>
-</head>
-<body>
-    <div id="navbar">
-        <img src="../images/plane.png">
-        <a href="/flights/index">Home</a>
-        <a href="/flights/all">All Flights</a><br>
-      </div>
+<%- include('../partials/header') %>
     <h2>Enter a New Flight</h2>
     <form action="/flights" method="POST">
         <label>Airline:
@@ -32,14 +18,9 @@
             min="10" max="9999">
         </label><br>
         <label>Departure Date:
-          <input type="date" name="depDate"
-          value=defaultDate>
+          <input type="date" name="depDate">
           <br>
         <input type="submit" value="Add Flight">
       </form>  
-<div id="mongoose"> 
-    <img src="../images/mongoose.png">
-    </div>
-</body>
-</html>
+<%- include('../partials/footer') %>
 
