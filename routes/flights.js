@@ -5,10 +5,11 @@ let router = express.Router();
 
 const flightsCtrl = require('../controllers/flights')
 
-/* GET home page. */
 router.get('/index', flightsCtrl.index)
 router.get('/new', flightsCtrl.new)
 router.get('/all', flightsCtrl.all)
 
+router.post('/', flightsCtrl.create)
+//router.get('/:id', flightsCtrl.show)
 
 module.exports = router;
