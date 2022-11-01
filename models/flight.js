@@ -1,7 +1,6 @@
 //models/flight.js
 
 const mongoose = require('mongoose');
-const { defaultDate } = require('../controllers/flights');
 
 const Schema = mongoose.Schema;
 
@@ -9,6 +8,7 @@ let date = new Date()
 let day = date.getDate()
 let month = date.getMonth()+1
 let year = date.getFullYear()+1
+let defaultDate = `${month}.${day}.${year}.`
 
 const flightSchema = new Schema({
     airline: {
@@ -28,7 +28,7 @@ const flightSchema = new Schema({
         },
     departs: {
         type: Date,
-        min: `${month}.${day}.${year}.`
+        default: defaultDate
         }
     }  
 })
