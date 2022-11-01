@@ -27,8 +27,16 @@ function allFlights(req, res) {
 
 //new flight function
 function create(req, res) {
-    res.send('flight saved')
-
+    // res.send('flight saved')
+    console.log(req.body.airline) 
+    console.log(req.body.airport)
+    console.log(req.body.flightNo)
+    console.log(req.body.inputDate)
+    const flight = new Flight(req.body)
+    flight.save(function(err){
+        if (err) return res.redirect('/flights/new')
+        else res.redirect('/flights/')
+    })
 }
 console.log('flight saved')
 
