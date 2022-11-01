@@ -19,10 +19,6 @@ function newFlight(req, res) {
     res.render('flights/new')
 }
 
-// function allFlights(req, res) {
-//     res.render('flights/all')
-// }
-
 function create(req, res) {
     let flight = new Flight(req.body)
     flight.save(function(err){
@@ -30,7 +26,6 @@ function create(req, res) {
         else res.redirect('/flights/index')
     })
     console.log('flight saved')
-    //res.redirect(`/flights/${flight:_id}`)
 }
 
 function findAll(req, res) {
@@ -41,11 +36,15 @@ function findAll(req, res) {
     console.log({ flights: Flight })
 }
 
+function showDetail(req, res) {
+    //res.send('details')
+}
 
 module.exports = {
     index,
     new: newFlight,
     all: allFlights,
     create,
-    findAll
+    findAll,
+    showDetail
 }

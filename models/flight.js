@@ -29,11 +29,28 @@ const flightSchema = new Schema({
         },
     departDate: {
         type: Date,
-        default: Date.defaultDate
+        default: defaultDate
         },
     departTime: {
         type: String
     }  
+})
+
+const destinationSchema = new Schema({
+    airport: {
+        type: String,
+        enum: {
+            values: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
+            default: 'DEN'
+        }
+    },
+    arrivalDate: {
+        type: Date,
+        default: Date.defaultDate
+        },
+    arrivalTime: {
+        type: String
+    }
 })
 
 module.exports = mongoose.model('Flight', flightSchema)

@@ -1,0 +1,46 @@
+<%- include('../partials/header') %>
+<h2>Show Flight Details</h2>
+<!-- <input type="submit" value="Find Flight"> -->
+<br></br>
+   <table id="list">
+        <thead>
+          <tr>
+            <th>Flight Number</th>    
+            <th>Airport</th>
+            <th>Airline</th>
+            <th>Date</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% flights.forEach(function(f) { %>
+            <tr>
+              <td><%= f.flightNo %></td>  
+              <td><%= f.airport %></td>
+              <td><%= f.airline %></td>
+              <td><%= f.departDate.toDateString() %></td>
+              <td><%= f.departTime %></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+    <form>   
+        <label>Destination:
+            <select name="Airport">
+                <option value=""></option>
+                <option value="AUS">Austin, TX - AUS</option>
+                <option value="DFW">Dallas, TX - DFW</option>
+                <option value="DEN">Denver, CO - DEN</option>
+                <option value="LAX">Los Angeles, CA - LAX</option>
+                <option value="DEN">San Diego, CA - SAN</option>
+            </select>
+        <label>Return Date:
+            <input type="date" name="departDate"
+            value=defaultDate>
+            <br>
+        <label>Return Time:
+            <input type="time" name="departTime">
+            </label>
+            <input type="submit" value="Add Flight">
+    </form> 
+<%- include('../partials/footer') %>
