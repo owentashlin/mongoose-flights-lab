@@ -11,6 +11,6 @@ router.get('/new', flightsCtrl.new)
 router.get('/all', flightsCtrl.all)
 
 router.post('/', flightsCtrl.create)
-router.get('/all', flightsCtrl.findAll)
+router.get('/:id', flightsCtrl.findAll)
 
 module.exports = router;

@@ -1,24 +1,28 @@
 <%- include('../partials/header') %>
-        <h2>Current Flights</h2>
-        <form action="/flights" method="GET"><input type="submit" value="Show All Flights"></form>
-        <table>
-            <thead>
-                  <tr>
-                    <th>Airline</th>
-                    <th>Airport</th>
-                    <th>Flight Number</th>
-                    <th>Departure Date</th>
-                  </tr>
-            </thead>
-                <tbody>
-                  <% Flight.forEach(function(Flight) { %>
-                    <tr>
-                      <td><%= m.airline %></td>
-                      <td><%= m.airport %></td>
-                      <td><%= m.flightNo %></td>
-                      <td><%= m.departs %></td>
-                      </tr>
-                    <% }) %>
-                </tbody>
-              </table>
+<h2>All Flights</h2>
+<input type="submit" value="Find Flight">
+<br></br>
+   <table id="list">
+        <thead>
+          <tr>
+            <th>Flight Number</th>    
+            <th>Airport</th>
+            <th>Airline</th>
+            <th>Date</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% flights.forEach(function(f) { %>
+            <tr>
+              <td><%= f.flightNo %></td>  
+              <td><%= f.airport %></td>
+              <td><%= f.airline %></td>
+              <td><%= f.departDate.toDateString() %></td>
+              <td><%= f.departTime %></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+        
 <%- include('../partials/footer') %>
