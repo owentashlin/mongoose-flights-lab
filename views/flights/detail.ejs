@@ -2,28 +2,18 @@
 <h2>Show Flight Details</h2>
 <!-- <input type="submit" value="Find Flight"> -->
 <br></br>
-   <table id="list">
-        <thead>
-          <tr>
-            <th>Flight Number</th>    
-            <th>Airport</th>
-            <th>Airline</th>
-            <th>Date</th>
-            <th>Time</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% flights.forEach(function(f) { %>
-            <tr>
-              <td><%= f.flightNo %></td>  
-              <td><%= f.airport %></td>
-              <td><%= f.airline %></td>
-              <td><%= f.departDate.toDateString() %></td>
-              <td><%= f.departTime %></td>
-            </tr>
-            <% }); %>
-          </tbody>
-        </table>
+<section id="show-page">
+    <div>Flight Number </div>
+    <div><%= flight.flightNo %></div>
+    <div>Departure Airport </div>
+    <div><%= flight.airport %></div>
+    <div>Airling </div>
+    <div><%= flight.airline %></div>
+    <div>Departure Date </div>
+    <div><%= flight.departDate.toDateString() %></div>
+    <div>Departure Time </div>
+    <div><%= flight.departTime %></div>
+  </section>
     <form>   
         <label>Destination:
             <select name="Airport">

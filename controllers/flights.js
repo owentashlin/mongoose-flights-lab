@@ -30,14 +30,17 @@ function create(req, res) {
 
 function findAll(req, res) {
     Flight.find({}, function(err, flights) {
-        if (err) console.log('error, cannot retrieve flight')
+        if (err) alert('error, cannot retrieve flight information')
         res.render('flights/all', { flights: Flight })
     })
-    console.log({ flights: Flight })
 }
 
 function showDetail(req, res) {
-    //res.send('details')
+    Flight.findById(req.params.id, function(err, flight) {
+        if (err) console.log('error, cannot retrieve flight information')
+        //res.send('flight info')
+        else res.render('flights/detail', { flightNo: 'Flight Number', flight })
+    })
 }
 
 module.exports = {
