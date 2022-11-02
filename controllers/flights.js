@@ -21,6 +21,7 @@ function newFlight(req, res) {
 
 function create(req, res) {
     let flight = new Flight(req.body)
+    console.log(req.body)
     flight.save(function(err){
         if (err) return console.log('error')
         else res.redirect('/flights/index')

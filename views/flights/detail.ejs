@@ -1,19 +1,27 @@
 <%- include('../partials/header') %>
 <h2>Show Flight Details</h2>
 <!-- <input type="submit" value="Find Flight"> -->
-<br></br>
-<section id="show-page">
-    <div>Flight Number </div>
-    <div><%= flight.flightNo %></div>
-    <div>Departure Airport </div>
-    <div><%= flight.airport %></div>
-    <div>Airling </div>
-    <div><%= flight.airline %></div>
-    <div>Departure Date </div>
-    <div><%= flight.departDate.toDateString() %></div>
-    <div>Departure Time </div>
-    <div><%= flight.departTime %></div>
-  </section>
+<table id="show-page">
+    <thead>
+        <tr>
+            <th>Flight Number </th>
+            <th>Departure Airport </th>
+            <th>Airline </th>
+            <th>Departure Date </th>
+            <th>Departure Time </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th><%= flight.flightNo %></th>
+            <th><%= flight.airport %></th>
+            <th><%= flight.airline %></th>
+            <th><%= flight.departDate.toDateString() %></th>
+            <th><%= flight.departTime %></th>
+        </tr>
+    </tbody> 
+</table>
+<h4>Select Destination and Return Flight Info Below:</h4>
     <form>   
         <label>Destination:
             <select name="Airport">
@@ -24,6 +32,7 @@
                 <option value="LAX">Los Angeles, CA - LAX</option>
                 <option value="DEN">San Diego, CA - SAN</option>
             </select>
+        <br>    
         <label>Return Date:
             <input type="date" name="departDate"
             value=defaultDate>
@@ -31,6 +40,7 @@
         <label>Return Time:
             <input type="time" name="departTime">
             </label>
+            <br>
             <input type="submit" value="Add Flight">
     </form> 
 <%- include('../partials/footer') %>
