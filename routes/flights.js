@@ -1,8 +1,7 @@
 //routes/flights.js
 
-let express = require('express');
-const flights = require('../controllers/flights');
-let router = express.Router();
+let express = require('express')
+let router = express.Router()
 
 const flightsCtrl = require('../controllers/flights')
 
@@ -11,7 +10,8 @@ router.get('/new', flightsCtrl.new)
 router.get('/all', flightsCtrl.all)
 router.get('/:id', flightsCtrl.showDetail)
 
+
 router.post('/', flightsCtrl.create)
 router.get('/:id', flightsCtrl.findAll)
 
-module.exports = router;
+module.exports = router

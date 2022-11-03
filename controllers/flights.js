@@ -10,9 +10,9 @@ function index(req, res) {
 
 function allFlights(req, res) {
     Flight.find({}, function(err, flights) {
-      if (err) return res.redirect('/');
-      res.render('flights/all', { flights });
-    });
+      if (err) return res.redirect('/')
+      res.render('flights/all', { flights })
+    })
   }
 
 function newFlight(req, res) {

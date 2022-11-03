@@ -22,15 +22,15 @@
     </tbody> 
 </table>
 <h4>Select Destination and Return Flight Info Below:</h4>
-    <form>   
+<form action="../flights/:id/destinations" method="POST">  
         <label>Destination:
             <select name="Airport">
                 <option value=""></option>
-                <option value="AUS">Austin, TX - AUS</option>
-                <option value="DFW">Dallas, TX - DFW</option>
-                <option value="DEN">Denver, CO - DEN</option>
-                <option value="LAX">Los Angeles, CA - LAX</option>
-                <option value="DEN">San Diego, CA - SAN</option>
+                <option value="Austin, TX - AUS">Austin, TX - AUS</option>
+                <option value="Dallas, TX - DFW">Dallas, TX - DFW</option>
+                <option value="Denver, CO - DEN">Denver, CO - DEN</option>
+                <option value="Los Angeles, CA - LAX">Los Angeles, CA - LAX</option>
+                <option value="San Diego, CA - SAN">San Diego, CA - SAN</option>
             </select>
         <br>    
         <label>Return Date:
@@ -41,6 +41,23 @@
             <input type="time" name="departTime">
             </label>
             <br>
-            <input type="submit" value="Add Flight">
+            <input type="submit" value="Update Flight Information">
     </form> 
+    <br></br>
+    <table id="show-page">
+        <thead>
+            <tr>
+                <th>Destination </th>
+                <th>Return Date </th>
+                <th>Return Time </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><%= flight.destinations.arrivalAirport %></th>
+                <th><%= flight.destinations.arrivalDate %></th>
+                <th><%= flight.destinations.arrivalTime %></th>  
+            </tr>
+        </tbody> 
+    </table>
 <%- include('../partials/footer') %>

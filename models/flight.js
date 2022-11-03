@@ -1,14 +1,30 @@
 //models/flight.js
 
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema
 
 let date = new Date()
 let day = date.getDate()
 let month = date.getMonth()+1
 let year = date.getFullYear()+1
 let defaultDate = `${month}.${day}.${year}.`
+
+const destinationSchema = new Schema({
+    arrivalAirport: {
+        type: String,
+        enum: {
+            values: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
+            default: 'DEN'
+        }
+    },
+    arrivalDate: {
+        type: Date
+        },
+    arrivalTime: {
+        type: String
+    }
+})
 
 const flightSchema = new Schema({
     airline: {
@@ -33,24 +49,8 @@ const flightSchema = new Schema({
         },
     departTime: {
         type: String
-    }  
-})
-
-const destinationSchema = new Schema({
-    airport: {
-        type: String,
-        enum: {
-            values: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
-            default: 'DEN'
-        }
     },
-    arrivalDate: {
-        type: Date,
-        default: Date.defaultDate
-        },
-    arrivalTime: {
-        type: String
-    }
+    destinations: [destinationSchema]
 })
 
 module.exports = mongoose.model('Flight', flightSchema)
