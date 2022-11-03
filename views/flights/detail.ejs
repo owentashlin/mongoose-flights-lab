@@ -54,9 +54,9 @@
         <tbody>
             <% flight.destinations.forEach(function(f) { %>
                 <tr>
-                    <td><%= f.destinations.destination %></td>
-                    <td><%= f.destinations.returnDate %></td>
-                    <td><%= f.destinations.returnTime %></td>
+                    <td><%= f.destination %></td>
+                    <td><%= f.returnDate %></td>
+                    <td><%= f.returnTime %></td>
                 </tr>
          <% }) %>
         </tbody>
