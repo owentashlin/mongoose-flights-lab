@@ -1,6 +1,5 @@
 <%- include('../partials/header') %>
 <h2>Show Flight Details</h2>
-<!-- <input type="submit" value="Find Flight"> -->
 <table id="show-page">
     <thead>
         <tr>
@@ -22,9 +21,9 @@
     </tbody> 
 </table>
 <h4>Select Destination and Return Flight Info Below:</h4>
-<form action="../flights/:id/destinations" method="POST">  
+<form action="../flights/<%= flight._id %>/destinations" method="POST">  
         <label>Destination:
-            <select name="Airport">
+            <select name="destination">
                 <option value=""></option>
                 <option value="Austin, TX - AUS">Austin, TX - AUS</option>
                 <option value="Dallas, TX - DFW">Dallas, TX - DFW</option>
@@ -43,21 +42,26 @@
             <br>
             <input type="submit" value="Update Flight Information">
     </form> 
-    <br></br>
-    <table id="show-page">
+<% if (flight.destinations.length) { %>
+    <table>
         <thead>
             <tr>
-                <th>Destination </th>
-                <th>Return Date </th>
-                <th>Return Time </th>
+                <th>Destination</th>
+                <th>Return Date</th>
+                <th>Return Time</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th><%= flight.destinations.arrivalAirport %></th>
-                <th><%= flight.destinations.arrivalDate %></th>
-                <th><%= flight.destinations.arrivalTime %></th>  
-            </tr>
-        </tbody> 
+            <% flight.destinations.forEach(function(f) { %>
+                <tr>
+                    <td><%= f.destinations.destination %></td>
+                    <td><%= f.destinations.returnDate %></td>
+                    <td><%= f.destinations.returnTime %></td>
+                </tr>
+         <% }) %>
+        </tbody>
     </table>
+<% } else { %> 
+    <h4>No Return Flight Selected</h4>
+    <% } %>
 <%- include('../partials/footer') %>

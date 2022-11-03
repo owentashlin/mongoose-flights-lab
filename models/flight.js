@@ -11,17 +11,17 @@ let year = date.getFullYear()+1
 let defaultDate = `${month}.${day}.${year}.`
 
 const destinationSchema = new Schema({
-    arrivalAirport: {
+    destination: {
         type: String,
         enum: {
             values: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
             default: 'DEN'
         }
     },
-    arrivalDate: {
+    returnDate: {
         type: Date
         },
-    arrivalTime: {
+    returnTime: {
         type: String
     }
 })

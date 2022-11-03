@@ -3,13 +3,17 @@
 const Flight = require('../models/flight')
 
 function create(req, res) {
-    res.send('flight updated')
-    // flight.destinations.push(req.body)
-    // flight.save(function(err){
-    //     console.log('destination saved')
-    // })
-}
-
+   //res.send('destination updated')
+    Flight.findById(req.params.id, function(err, flight) {
+      flight.destinations.push(req.body)
+      flight.save(function(err) {
+        if (err) return console.log('error, cannot retrieve flight information')
+        //res.send('destination updated')
+        //res.render('/flights/destinations')
+      })
+      console.log(req.body)
+    })
+  }
 module.exports = {
     create
 }
