@@ -25,6 +25,7 @@ function create(req, res) {
         if (err) return console.log('error')
         else res.redirect('/flights/index')
     })
+    console.log(req.body)
 }
 
 function findAll(req, res) {
