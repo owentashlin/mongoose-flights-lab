@@ -6,14 +6,9 @@ const Schema = mongoose.Schema
 
 let date = new Date()
 let day = date.getDate()
-let month = date.getMonth()
-let year = date.getFullYear()
-
-let defaultDepartDate = `${month + 1}.${day}.${year + 1}.`
-let defaultReturnDate = `${month + 1}.${day + 1}.${year + 1}.`
-
-console.log(defaultDepartDate)
-console.log(defaultReturnDate)
+let month = date.getMonth()+1
+let year = date.getFullYear()+1
+let defaultDate = `${month}.${day}.${year}.`
 
 const destinationSchema = new Schema({
     destination: {
@@ -24,8 +19,7 @@ const destinationSchema = new Schema({
         }
     },
     returnDate: {
-        type: Date,
-        default: defaultReturnDate
+        type: Date
         },
     returnTime: {
         type: String
@@ -51,7 +45,7 @@ const flightSchema = new Schema({
         },
     departDate: {
         type: Date,
-        default: defaultDepartDate
+        default: defaultDate
         },
     departTime: {
         type: String

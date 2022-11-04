@@ -1,4 +1,5 @@
 //controllers/flights.js
+
 const { signedCookie } = require('cookie-parser')
 const Flight = require('../models/flight')
 
