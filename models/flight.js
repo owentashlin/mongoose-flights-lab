@@ -50,7 +50,10 @@ const flightSchema = new Schema({
     departTime: {
         type: String
     },
-    destinations: [destinationSchema]
+    destinations: [destinationSchema],
+    tickets: [
+        {type: Schema.Types.ObjectId, ref: 'Ticket'
+    }]
 })
 
 module.exports = mongoose.model('Flight', flightSchema)
