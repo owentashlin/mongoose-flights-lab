@@ -44,3 +44,9 @@ table, th, td {
   font-size: 20px;
   padding: 5px;
 }
+
+#badge-box {
+  width: 200px;
+  height: 100px;
+  border: px dotted black;
+}

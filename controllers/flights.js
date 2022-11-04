@@ -2,6 +2,7 @@
 
 const { signedCookie } = require('cookie-parser')
 const Flight = require('../models/flight')
+const Ticket = require('../models/ticket')
 
 //display page functions
 function index(req, res) {
@@ -38,9 +39,11 @@ function findAll(req, res) {
 
 function showDetail(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
-        if (err) console.log('error, cannot retrieve flight information')
-        //res.send('flight info')
-        else res.render('flights/detail', { flightNo: 'Flight Number', flight })
+        Ticket.find({flight: flight._id}, function(err, tickets) {
+            if (err) console.log('error, cannot retrieve flight information')
+            //res.send('flight info')
+            else res.render('flights/detail', { flightNo: 'Flight Number', flight })
+        })
     })
 }
 
