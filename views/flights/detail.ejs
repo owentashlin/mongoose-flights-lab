@@ -25,19 +25,18 @@
         <label>Destination:</label>
             <select name="destination" required>
                 <option value=""></option>
-                <option value="Austin, TX - AUS">Austin, TX - AUS</option>
-                <option value="Dallas, TX - DFW">Dallas, TX - DFW</option>
-                <option value="Denver, CO - DEN">Denver, CO - DEN</option>
-                <option value="Los Angeles, CA - LAX">Los Angeles, CA - LAX</option>
-                <option value="San Diego, CA - SAN">San Diego, CA - SAN</option>
+                <option value="AUS">Austin, TX - AUS</option>
+                <option value="DFW">Dallas, TX - DFW</option>
+                <option value="DEN">Denver, CO - DEN</option>
+                <option value="LAX">Los Angeles, CA - LAX</option>
+                <option value="SAN">San Diego, CA - SAN</option>
             </select>
         <br>    
         <label>Return Date:</label>
-            <input type="date" name="departDate"
-            value=defaultDate required>
+            <input type="date" name="returnDate" required>
             <br>
         <label>Return Time:</label>
-            <input type="time" name="departTime" required>
+            <input type="time" name="returnTime" required>
             <br>
             <input type="submit" value="Update Flight Information">
     </form> 
@@ -55,7 +54,7 @@
             <% flight.destinations.forEach(function(f) { %>
                 <tr>
                     <td><%= f.destination %></td>
-                    <td><%= f.returnDate %></td>
+                    <td><%= f.returnDate.toDateString() %></td>
                     <td><%= f.returnTime %></td>
                 </tr>
          <% }) %>

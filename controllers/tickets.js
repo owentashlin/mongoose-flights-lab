@@ -1,5 +1,6 @@
 // const Ticket = require('../models/ticket')
 const Ticket = require('../models/ticket')
+const Flight = require('../models/flight')
 
 function show(req, res) {
     res.render('flights/tickets')
