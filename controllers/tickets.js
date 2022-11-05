@@ -8,13 +8,21 @@ function show(req, res) {
 
 function create(req, res) {
     Ticket.create(req.body, function (err, ticket) {
-        res.send('ticket purchased')
-        //res.redirect('/flights/tickets');
+        res.redirect('tickets/index')
     });
   }
 
+  function addToFlight(req, res) {
+    Flight.findById(req.params.id, function (err, flight) {
+      flight.ticket.push(req.body.ticketId);
+      ticket.save(function (err) {
+        res.redirect(`/flights/${flight._id}`);
+      });
+    });
+  }
 
 module.exports = {
     show,
-    create
+    create,
+    addToFlight
 }

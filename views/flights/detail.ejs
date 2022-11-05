@@ -20,6 +20,7 @@
         </tr>
     </tbody> 
 </table>
+
 <h4>Select Destination and Return Flight Info Below:</h4>
 <form id="add-destination-form" method="POST" action="../flights/<%= flight._id %>/destinations">  
         <label>Destination:</label>
@@ -63,4 +64,5 @@
 <% } else { %> 
     <h4>No Return Flight Selected</h4>
     <% } %>
+
 <%- include('../partials/footer') %>

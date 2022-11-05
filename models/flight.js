@@ -44,9 +44,9 @@ const flightSchema = new Schema({
         type: String
     },
     destinations: [destinationSchema],
-    // tickets: [
-    //     {type: Schema.Types.ObjectId, ref: 'Ticket'
-    // }]
+    seats: [
+        {type: Schema.Types.ObjectId, ref: 'Ticket'
+    }]
 })
 
 module.exports = mongoose.model('Flight', flightSchema)

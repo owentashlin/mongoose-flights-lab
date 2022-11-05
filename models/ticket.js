@@ -16,7 +16,7 @@ const ticketsSchema = new Schema({
     price: {
         type: Number, 
         min: 0,
-        vaule: ticketPrice
+        value: ticketPrice
     },
 })
 
