@@ -1,6 +1,5 @@
 <%- include('../partials/header') %>
 <h2>All Flights</h2>
-<!-- <input type="submit" value="Find Flight"> -->
 <br></br>
    <table id="list">
         <thead>
@@ -19,7 +18,7 @@
               <td><%= f.flightNo %></td>  
               <td><%= f.airport %></td>
               <td><%= f.airline %></td>
-              <td><%= f.departDate.toDateString() %></td>
+              <td><%= f.departDate.toDateString({}) %></td>
               <td><%= f.departTime %></td>
               <td><a href="/flights/<%= f._id %>">Flight Details</a></td>
             </tr>

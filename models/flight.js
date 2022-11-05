@@ -4,12 +4,6 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-let date = new Date()
-let day = date.getDate()
-let month = date.getMonth()+1
-let year = date.getFullYear()+1
-let defaultDate = `${month}.${day}.${year}.`
-
 const destinationSchema = new Schema({
     destination: {
         type: String,
@@ -45,7 +39,6 @@ const flightSchema = new Schema({
         },
     departDate: {
         type: Date,
-        default: defaultDate
         },
     departTime: {
         type: String

@@ -6,7 +6,7 @@ function rndmTicketPrice(min, max) { // min and max included
 }
 
 const ticketPrice = rndmTicketPrice(0, 250)
-console.log(ticketPrice)
+//console.log(ticketPrice)
 
 const ticketsSchema = new Schema({
     seat: {

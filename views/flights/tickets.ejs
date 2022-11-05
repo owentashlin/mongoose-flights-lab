@@ -4,14 +4,18 @@
     <div id="ticket-header">Before selecting your seat, please ensure that the it has not already been selected and is not in the following list:</div>
     <div id="badge-box">
         <section id="badge-container">
-        
-            <article class="badge"></article>
-        
-        </section>
+            
+          </section>
     </div>
     <br>
 <form>    
-    <input name="seat" required pattern="[A-F][1-9]\d?">
+    <label>Select Seat Number:</label>
+    <input name="seat" required pattern="[A-F][1-9]\d?" placeholder="A1 through F9">
+    <br>
+    <label>Price:</label>
+    <div id="ticket-price">
+        
+    </div>
     <br>
     <input type="submit" value="Purchase Ticket">
 </form>

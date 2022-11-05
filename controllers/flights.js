@@ -25,7 +25,7 @@ function create(req, res) {
     console.log(req.body)
     flight.save(function(err){
         if (err) return console.log('error')
-        else res.redirect('/flights/index')
+        else res.redirect('/flights/all')
     })
     console.log(req.body)
 }
